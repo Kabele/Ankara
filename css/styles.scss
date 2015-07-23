@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6 {
 //  }
 //}
 .post-single {
-  margin: -150px 0 0 0;
+  margin: -300px 0 0 0;
 }
 
 .container-large {
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .banner {
   @extend .parallax-container;
-  height: 300px;
+
 }
 
 div#blog-posts {

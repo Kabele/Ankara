@@ -1,17 +1,40 @@
 @import "materialize";
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
+  font-weight: 100;
 }
 
-//a {
-//  &:hover{
-//    color: lighten($link-color, 5%);
-//  }
-//}
-.post-single {
-  margin: -300px 0 0 0;
+@media #{$small-and-down} {
+  .post-single {
+    margin-top: -40%;
+  }
+  .banner {
+    //position: absolute;
+    min-height: 300px !important;
+  }
 }
+
+@media #{$medium-and-up} {
+  .post-single {
+    margin-top: -30%;
+  }
+  .banner {
+    //position: absolute;
+    min-height: 500px !important;
+  }
+}
+
+@media #{$large-and-up} {
+  .post-single {
+    margin-top: -30%;
+  }
+  .banner {
+    //position: absolute;
+    min-height: 500px !important;
+  }
+}
+
+
 
 .container-large {
   @extend .container;
@@ -20,7 +43,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .banner {
   @extend .parallax-container;
-
 }
 
 div#blog-posts {
@@ -28,25 +50,18 @@ div#blog-posts {
 }
 
 
-.blog-post-meta {
-  ul {
-    width: 100%;
-    margin: 0 auto;
-    li {
-      float: left;
-      margin-right: 10px;
-      border-right: 1px solid color('pink', 'accent-2');
+ul.blog-post-meta li {
+  float: left;
+  margin-right: 10px;
+  border-right: 1px solid color('pink', 'accent-2');
+  padding-right: 10px;
+  line-height: 11px;
+  font-weight: 400;
+  a {
+    color: color('grey', 'lighten-5');
+    &:hover {
+      color: color('grey', 'lighten-3');
 
-      padding-right: 10px;
-      line-height: 11px;
-      font-weight: 400;
-      a {
-        color: color('grey', 'lighten-5');
-        &:hover {
-          color: color('grey', 'lighten-3');
-
-        }
-      }
     }
   }
 }
@@ -56,6 +71,7 @@ div#blog-posts {
   text-align: right;
   right: 10px;
   position: absolute;
+
   li {
     display: inline-block;
     padding-left: 5px;

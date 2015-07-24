@@ -8967,7 +8967,6 @@ small {
   transition: box-shadow .25s;
   border-radius: 2px; }
   .card .card-title {
-    color: #fff;
     font-size: 24px;
     font-weight: 300; }
     .card .card-title.activator {
@@ -9014,6 +9013,7 @@ small {
     .card .card-image .card-title {
       position: absolute;
       bottom: 0;
+      color: #fff;
       left: 0;
       padding: 20px; }
   .card .card-content {
@@ -9023,7 +9023,8 @@ small {
       margin: 0;
       color: inherit; }
     .card .card-content .card-title {
-      line-height: 48px; }
+      line-height: 36px;
+      padding-bottom: 16px; }
   .card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 20px; }
@@ -11699,31 +11700,43 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .picker--time .picker__box {
     margin-bottom: 5em; } }
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; }
+  font-weight: 100; }
 
-.post-single {
-  margin: -300px 0 0 0; }
+@media only screen and (max-width: 600px) {
+  .post-single {
+    margin-top: -40%; }
 
+  .banner {
+    min-height: 300px !important; } }
+@media only screen and (min-width: 601px) {
+  .post-single {
+    margin-top: -30%; }
+
+  .banner {
+    min-height: 500px !important; } }
+@media only screen and (min-width: 993px) {
+  .post-single {
+    margin-top: -30%; }
+
+  .banner {
+    min-height: 500px !important; } }
 .container-large {
   width: 80%; }
 
 div#blog-posts {
   padding: 50px 0; }
 
-.blog-post-meta ul {
-  width: 100%;
-  margin: 0 auto; }
-  .blog-post-meta ul li {
-    float: left;
-    margin-right: 10px;
-    border-right: 1px solid #ff4081;
-    padding-right: 10px;
-    line-height: 11px;
-    font-weight: 400; }
-    .blog-post-meta ul li a {
-      color: #fafafa; }
-      .blog-post-meta ul li a:hover {
-        color: #eeeeee; }
+ul.blog-post-meta li {
+  float: left;
+  margin-right: 10px;
+  border-right: 1px solid #ff4081;
+  padding-right: 10px;
+  line-height: 11px;
+  font-weight: 400; }
+  ul.blog-post-meta li a {
+    color: #fafafa; }
+    ul.blog-post-meta li a:hover {
+      color: #eeeeee; }
 
 .card > ul.card-action-buttons {
   margin: -26px 10px 0px 0px;

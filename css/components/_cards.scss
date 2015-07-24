@@ -20,7 +20,6 @@
 
 
   .card-title {
-    color: $card-bg-color;
     font-size: 24px;
     font-weight: 300;
     &.activator {
@@ -98,6 +97,7 @@
     .card-title {
       position: absolute;
       bottom: 0;
+      color: $card-bg-color;
       left: 0;
       padding: $card-padding;
     }
@@ -114,7 +114,8 @@
       color: inherit;
     }
     .card-title {
-      line-height: 48px;
+      line-height: 36px;
+      padding-bottom: 16px;
     }
   }
 

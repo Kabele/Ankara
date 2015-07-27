@@ -12,7 +12,7 @@
                             'm6',
                             'article',
                         ]); ?>>
-                            <div class="card  <?php if (! has_post_thumbnail()) { ?> indigo white-text <?php } ?>">
+                            <div class="card  <?php if (! has_post_thumbnail()) { ?> indigo white-text<?php } else { ?> with-img <?php } ?>">
                                 <?php if (has_post_thumbnail()) { ?>
                                     <div class="card-image waves-effect waves-block waves-light">
                                         <a href="#">

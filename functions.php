@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Functions for Ankara
+ *
+ * @package Ankara
+ */
 function ankara_scripts()
 {
 //    Loading local jquery to avoid no-conflict $ issue when working with Materialize css
@@ -32,6 +37,39 @@ function ankara_theme_customizer($wp_customize)
     // End logo
 
 }
+
 add_action('customize_register', 'ankara_theme_customizer');
+
 add_theme_support('post-thumbnails');
 add_image_size('featured-image', 672, 372, true);
+
+
+
+/**
+ * Register footer widget area.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+function ankara_widgets() {
+    register_sidebar( array(
+        'name'          => __( 'Footer Area 1', 'ankara' ),
+        'id'            => 'footer-widget-1',
+        'description'   => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="panel panel-warning footer-widget">',
+        'after_widget'  => '</div></aside>',
+        'before_title'  => ' <div class="panel-heading"><h4 class="panel-title white-text">',
+        'after_title'   => '</h4></div>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Footer Area 2', 'ankara' ),
+        'id'            => 'footer-widget-2',
+        'class'         => 'grey-text text-lighten-4',
+        'description'   => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s"><div class="panel panel-warning footer-widget">',
+        'after_widget'  => '</div></aside>',
+        'before_title'  => ' <div class="panel-heading"><h4 class="panel-title">',
+        'after_title'   => '</h4></div>',
+    ) );
+}
+add_action( 'widgets_init', 'ankara_widgets' );

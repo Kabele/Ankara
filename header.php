@@ -26,7 +26,7 @@
 <nav role="navigation">
     <div class="nav-wrapper">
         <div class="col s12">
-            <div class="container">
+            <div class="container-large">
                 <a href="<?php echo site_url(); ?>" class="brand-logo center">
                     <!--                <img src="images/logo.png" alt="Devdome">-->
                     <?php if (get_theme_mod('ankara_logo')) : ?>
@@ -36,16 +36,16 @@
                         <?php echo bloginfo('name'); ?>
                     <?php endif; ?>
                 </a>
-                <a href="#" data-activates="mobile-nav" class="button-collapse "><i class="mdi-navigation-menu"></i></a>
+<!--                <a href="#" data-activates="mobile-nav" class="button-collapse "><i class="mdi-navigation-menu"></i></a>-->
 
-                <ul class="left hide-on-med-and-down">
-                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-facebook"></i> </a>
-                    </li>
-                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-google-plus"></i>
-                        </a></li>
-                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-twitter"></i> </a>
-                    </li>
-                </ul>
+<!--                <ul class="left hide-on-med-and-down">-->
+<!--                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-facebook"></i> </a>-->
+<!--                    </li>-->
+<!--                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-google-plus"></i>-->
+<!--                        </a></li>-->
+<!--                    <li class="waves-effect waves-light waves-block"><a href="#!"><i class="mdi mdi-twitter"></i> </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
 
                 <?php $menu_args = array(
                     'theme_location' => 'primary',
@@ -71,17 +71,17 @@
                 );
                 wp_nav_menu($menu_args); ?>
 
-                <!--            <ul class="right hide-on-med-and-down">-->
-                <!--                <li class="active"><a href="/">Home</a></li>-->
-                <!--                <li><a href="#">News</a></li>-->
-                <!--                <li><a href="#">Reviews</a></li>-->
-                <!--                <li><a href="#"><i class="mdi-action-search"></i></a></li>-->
-                <!--            </ul>-->
-                <!--            <ul class="side-nav" id="mobile-nav">-->
-                <!--                <li class="active"><a href="/">Home</a></li>-->
-                <!--                <li><a href="#">News</a></li>-->
-                <!--                <li><a href="#">Reviews</a></li>-->
-                <!--            </ul>-->
+<!--                            <ul class="right hide-on-med-and-down">-->
+<!--                                <li class="active"><a href="/">Home</a></li>-->
+<!--                                <li><a href="#">News</a></li>-->
+<!--                                <li><a href="#">Reviews</a></li>-->
+<!--                                <li><a href="#"><i class="mdi-action-search"></i></a></li>-->
+<!--                            </ul>-->
+<!--                            <ul class="side-nav" id="mobile-nav">-->
+<!--                                <li class="active"><a href="/">Home</a></li>-->
+<!--                                <li><a href="#">News</a></li>-->
+<!--                                <li><a href="#">Reviews</a></li>-->
+<!--                            </ul>-->
             </div>
         </div>
     </div>

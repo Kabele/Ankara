@@ -34,21 +34,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
-
 .container-large {
   @extend .container;
   width: 80%;
 }
 
-.banner {
-  @extend .parallax-container;
-}
+//.banner {
+//  @extend .parallax-container;
+//}
 
 div#blog-posts {
   padding: 50px 0;
 }
-
 
 ul.blog-post-meta li {
   float: left;
@@ -67,9 +64,9 @@ ul.blog-post-meta li {
 }
 
 .card > ul.card-action-buttons {
-  margin: -26px 10px 0px 0px;
   text-align: right;
-  right: 10px;
+  right: 15px;
+  margin: 15px 10px 0 0;
   position: absolute;
 
   li {
@@ -78,8 +75,31 @@ ul.blog-post-meta li {
   }
 }
 
+.with-img > ul.card-action-buttons {
+  margin: -26px 10px 0 0 !important;
+}
+
 .post-single {
   @extend .flow-text;
   font-size: 1.2em;
 }
 
+/* Footer Links */
+
+.footer-link {
+  color: color("grey", "lighten-2");
+
+  &:hover {
+    color: color("grey", "lighten-4");
+  }
+}
+
+.footer-widget > ul > li {
+  padding-bottom: 1em;
+  a {
+    color: color("grey", "lighten-2");
+    &:hover {
+      color: color("grey", "lighten-4");
+    }
+  }
+}

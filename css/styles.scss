@@ -105,6 +105,10 @@ ul.blog-post-meta li {
 }
 
 //comments
-.comment-section > ol {
-  list-style: none;
+
+.comment-section {
+  padding-top: 2em;
+  ol {
+    list-style: none;
+  }
 }

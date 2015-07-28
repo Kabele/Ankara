@@ -13,7 +13,7 @@ if (post_password_required()) {
 
 
 <div id="comments" class="comment-section">
-    <h4><?php echo comments_number("No Comment yet", '1'); ?></h4>
+    <h4><?php echo comments_number("No Comment yet", '1 Comment'); ?></h4>
     <?php if (!have_comments()) : ?>
         <p class="article">Be the first to say something.</p>
     <?php endif; ?>

@@ -19,7 +19,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(['white']); ?>>
+<body <?php body_class(['grey lighten-5']); ?>>
 
 <!-- Toolbar -->
 <!--<div class="navbar-fixed">-->

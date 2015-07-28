@@ -50,7 +50,7 @@
                         </p>
                     </div>
                     <div class="card-action right">
-                        <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>
+                           <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>
                         <a href="" class="btn-floating light-blue"><i class="mdi mdi-twitter"></i></a>
                         <a href="" class="btn-floating materialize-red darken-1"><i class="mdi mdi-google-plus"></i></a>
                         <a href="" class="btn-floating pink"><i class="mdi-communication-comment"></i></a>

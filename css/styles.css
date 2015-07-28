@@ -11766,4 +11766,7 @@ ul.blog-post-meta li {
     .footer-widget > ul > li a:hover {
       color: #f5f5f5; }
 
+.comment-section > ol {
+  list-style: none; }
+
 /*# sourceMappingURL=styles.css.map */

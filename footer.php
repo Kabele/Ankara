@@ -19,7 +19,7 @@
     </div>
     <div class="footer-copyright">
         <div class="container">
-                <span class="white-text">&copy;<?php echo date('Y'); ?>
+                <span class="">&copy;<?php echo date('Y'); ?>
                     Copyright <?php echo get_bloginfo(name); ?></span>
             Made using <a class="footer-link"
                           href="http://materializecss.com">Materialize CSS</a>

@@ -2099,7 +2099,7 @@ video.responsive-video {
   .pagination li.active a {
     color: #fff; }
   .pagination li.active {
-    background-color: #FFFFFF; }
+    background-color: #3f51b5; }
   .pagination li.disabled a {
     cursor: default;
     color: #999; }

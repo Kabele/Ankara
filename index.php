@@ -3,6 +3,7 @@
 
         <div class="container">
             <div class="row">
+            <?php if ( have_posts() ) : ?>
                 <div id="blog-posts">
                     <?php while (have_posts()) : the_post(); ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class([
@@ -40,7 +41,11 @@
                         </article>
                     <?php endwhile; ?>
                 </div>
+
             </div>
+            <div class="center">
+             <?php ankara_numeric_posts_nav(); ?></div>
+            <?php endif; ?>
         </div>
         <!--./container end-->
     </section>

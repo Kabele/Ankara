@@ -21,11 +21,11 @@
                                         </a>
                                     </div>
                                 <?php } ?>
-                                <ul class="card-action-buttons">
+                                <!--<ul class="card-action-buttons">
                                     <li><a title="Share" class="btn-floating waves-effect waves-light pink accent-3"><i
                                                 class="mdi-social-share"></i></a>
                                     </li>
-                                </ul>
+                                </ul>-->
                                 <div class="card-content">
                                     <span class="card-title flow-text"><?php the_title(); ?></span>
                                     <p><?php the_excerpt(); ?></p>

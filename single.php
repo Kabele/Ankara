@@ -16,7 +16,8 @@
                             </a>
                         </li>
                         <li><a href="<?php the_permalink(); ?>#comments" title="Comments"><i
-                                    class="mdi-communication-comment"></i><span> <?php comments_number("No Comments", "1", "%"); ?></span></a></li>
+                                    class="mdi-communication-comment"></i><span> <?php comments_number("No Comments",
+                                        "1", "%"); ?></span></a></li>
                         <?php if (has_tag()) { ?>
                             <li><i class="mdi mdi-tag"></i><span>
                                 <?php $tag = get_the_tags();
@@ -44,13 +45,11 @@
                             </a>
                         </div>
                     <?php } ?>
-                    <div class="card-content" id="content">
-                        <p class="article-single entry-content">
-                            <?php the_content(); ?>
-                        </p>
+                    <div class="card-content entry-content" id="content">
+                        <?php the_content(); ?>
                     </div>
                     <div class="card-action right">
-                           <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>
+                        <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>
                         <a href="" class="btn-floating light-blue"><i class="mdi mdi-twitter"></i></a>
                         <a href="" class="btn-floating materialize-red darken-1"><i class="mdi mdi-google-plus"></i></a>
                         <a href="" class="btn-floating pink"><i class="mdi-communication-comment"></i></a>

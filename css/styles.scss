@@ -1,5 +1,15 @@
 @import "materialize";
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+section.main {
+  flex: 1;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 100;
 }
@@ -107,8 +117,20 @@ ul.blog-post-meta li {
 //comments
 
 .comment-section {
+
   padding-top: 2em;
+  .comment-list {
+    padding: 0 0 2em 0;
+  }
   ol {
     list-style: none;
+  }
+}
+
+@media #{$small-and-down} {
+  .comment-section {
+    ol {
+      padding: 0 0 1em;
+    }
   }
 }

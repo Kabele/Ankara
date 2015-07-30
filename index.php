@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
-    <!-- Main Content -->
-    <section>
+
         <div class="container">
             <div class="row">
                 <div id="blog-posts">

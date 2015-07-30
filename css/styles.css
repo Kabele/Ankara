@@ -5043,8 +5043,8 @@ span.badge {
 /* MaterialDesignIcons.com */
 @font-face {
   font-family: 'MaterialDesignIcons';
-  src: url("../fonts/materialdesignicons-webfont.eot?v=1.1.34");
-  src: url("../fonts/materialdesignicons-webfont.eot?#iefix&v=1.1.34") format("embedded-opentype"), url("../fonts/materialdesignicons-webfont.woff2?v=1.1.34") format("woff2"), url("../fonts/materialdesignicons-webfont.woff?v=1.1.34") format("woff"), url("../fonts/materialdesignicons-webfont.ttf?v=1.1.34") format("truetype"), url("../fonts/materialdesignicons-webfont.svg?v=1.1.34#materialdesigniconsregular") format("svg");
+  src: url("..//fonts/materialdesignicons-webfont.eot?v=1.1.34");
+  src: url("..//fonts/materialdesignicons-webfont.eot?#iefix&v=1.1.34") format("embedded-opentype"), url("..//fonts/materialdesignicons-webfont.woff2?v=1.1.34") format("woff2"), url("..//fonts/materialdesignicons-webfont.woff?v=1.1.34") format("woff"), url("..//fonts/materialdesignicons-webfont.ttf?v=1.1.34") format("truetype"), url("..//fonts/materialdesignicons-webfont.svg?v=1.1.34#materialdesigniconsregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 .mdi {
@@ -11699,6 +11699,14 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+section.main {
+  flex: 1; }
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 100; }
 
@@ -11768,7 +11776,13 @@ ul.blog-post-meta li {
 
 .comment-section {
   padding-top: 2em; }
+  .comment-section .comment-list {
+    padding: 0 0 2em 0; }
   .comment-section ol {
     list-style: none; }
+
+@media only screen and (max-width: 600px) {
+  .comment-section ol {
+    padding: 0 0 1em; } }
 
 /*# sourceMappingURL=styles.css.map */

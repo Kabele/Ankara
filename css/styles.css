@@ -9098,7 +9098,7 @@ small {
   align-items: center;
   -webkit-justify-content: space-between;
   justify-content: space-between; }
-  .toast .btn, .toast .btn-large, .toast .btn-flat {
+  .toast .btn, .toast .btn-large, .toast .btn-flat, .toast #cancel-comment-reply-link {
     margin: 0;
     margin-left: 3rem; }
   .toast.rounded {
@@ -9191,7 +9191,7 @@ small {
   transform-origin: 50% 10%;
   will-change: transform, opacity; }
 
-.btn, .btn-large, .btn-flat {
+.btn, .btn-large, .btn-flat, #cancel-comment-reply-link {
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -9214,7 +9214,7 @@ small {
     background-color: #DFDFDF;
     color: #9F9F9F; }
 
-.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i {
+.btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i, #cancel-comment-reply-link i {
   font-size: 1.3rem;
   line-height: inherit; }
 
@@ -9285,12 +9285,12 @@ button.btn-floating {
     .fixed-action-btn ul a.btn-floating {
       opacity: 0; }
 
-.btn-flat {
+.btn-flat, #cancel-comment-reply-link {
   box-shadow: none;
   background-color: transparent;
   color: #343434;
   cursor: pointer; }
-  .btn-flat.disabled {
+  .btn-flat.disabled, .disabled#cancel-comment-reply-link {
     color: #b3b3b3;
     cursor: default; }
 
@@ -9465,7 +9465,7 @@ a.waves-effect .waves-ripple {
     padding: 4px 6px;
     height: 56px;
     width: 100%; }
-    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
+    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat, .modal .modal-footer #cancel-comment-reply-link {
       float: right;
       margin: 6px 0; }
 
@@ -11774,10 +11774,14 @@ ul.blog-post-meta li {
     .footer-widget > ul > li a:hover {
       color: #f5f5f5; }
 
+/* comments */
 .comment-section {
   padding-top: 2em; }
   .comment-section .comment-list {
     padding: 0 0 2em 0; }
+    .comment-section .comment-list .card .comment-respond {
+      padding-bottom: 30px;
+      margin: 30px; }
   .comment-section ol {
     list-style: none; }
 

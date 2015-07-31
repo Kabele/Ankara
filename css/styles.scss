@@ -114,17 +114,28 @@ ul.blog-post-meta li {
   }
 }
 
-//comments
+/* comments */
 
 .comment-section {
 
   padding-top: 2em;
   .comment-list {
     padding: 0 0 2em 0;
+    .card {
+      .comment-respond {
+        padding-bottom: 30px;
+        margin: 30px;
+      }
+    }
   }
   ol {
     list-style: none;
   }
+}
+
+#cancel-comment-reply-link {
+  @extend .btn-flat;
+
 }
 
 @media #{$small-and-down} {
@@ -134,3 +145,5 @@ ul.blog-post-meta li {
     }
   }
 }
+
+

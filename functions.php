@@ -16,6 +16,9 @@ function ankara_scripts()
     wp_enqueue_script('ankara', get_template_directory_uri() . '/js/ankara.js', array(), false, true);
     wp_enqueue_script('nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array(), false,
         true);
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
 
 add_action('wp_enqueue_scripts', 'ankara_scripts');
@@ -114,7 +117,8 @@ function ankara_comments($comment, $args, $depth)
                         <?php
                         comment_reply_link(array_merge($args, array(
                             'reply_text' => '<i class="mdi mdi-reply"></i> ' . __('Reply'),
-                            'after' => '',
+                            'before' => '<div class="card-content">',
+                            'after' => '</div>',
                             'depth' => $depth,
                             'max_depth' => $args['max_depth']
                         ))); ?>
@@ -172,10 +176,10 @@ function ankara_numeric_posts_nav()
     /** Previous Post Link */
 
     $prev_link_classes = '';
-    if (! get_previous_posts_link()) {
+    if (!get_previous_posts_link()) {
         $prev_link = '<a href="#!" aria-disabled="true" disabled><i class="mdi mdi-chevron-left"></i></a>';
         $prev_link_classes .= 'disabled';
-    } else  {
+    } else {
         $prev_link = get_previous_posts_link('<i class="mdi mdi-chevron-left"></i>');
         $prev_link_classes .= 'waves-effect';
     }
@@ -221,10 +225,10 @@ function ankara_numeric_posts_nav()
 
     /** Next Post Link */
     $next_link_classes = '';
-    if (! get_next_posts_link()) {
+    if (!get_next_posts_link()) {
         $next_link = '<a href="#!" aria-disabled="true" disabled><i class="mdi mdi-chevron-right"></i></a>';
         $next_link_classes .= ' class="disabled"';
-    } else  {
+    } else {
         $next_link = get_previous_posts_link('<i class="mdi mdi-chevron-right"></i>');
         $next_link_classes .= ' class="waves-effect"';
     }
@@ -232,3 +236,104 @@ function ankara_numeric_posts_nav()
 
     echo '</ul></div>' . "\n";
 }
+
+/**
+ * Gets and sets view count when page is opened
+ * @param $post_id
+ * @return string
+ */
+function ankara_postviews($post_id)
+{
+    $countKey = 'post_views_count';
+
+    //get the value of the count_key field
+    $count = get_post_meta($post_id, $countKey, true);
+
+    // if the custom field does not exist for specified post
+    if ($count == "") {
+        $count = 0; //set counter to zero
+
+        // delete the custom fields with the specified key
+        delete_post_meta($post_id, $countKey);
+
+        //Add the custom meta field to the post
+        add_post_meta($post_id, $countKey, '0');
+
+        return $count . ' views';
+    }
+
+    $count++; // Increment the counter by 1
+
+    // update the meta key for the field
+    update_post_meta($post_id, $countKey, $count);
+
+    // return count
+    if (!$count == 1) {
+        return $count . ' views';
+    }
+
+    return $count . ' view';
+}
+
+
+/**
+ * Get the number of post views to be used later
+ * @param $post_id
+ * @return mixed
+ */
+function get_postviews($post_id)
+{
+    $countKey = 'post_views_count';
+    $count = get_post_meta($post_id, $countKey, true);
+    if (!$count) {
+        return 0;
+    }
+
+    return $count;
+}
+
+
+/**
+ * adds a column to show views
+ * @param $columns
+ * @return mixed
+ */
+function post_column_views($columns)
+{
+    $columns['post_views'] = __('View count');
+
+    return $columns;
+}
+
+add_filter('manage_edit-post_columns', 'post_column_views');
+
+
+/**
+ * Register sorted columns
+ * @param $columns
+ * @return mixed
+ */
+function register_sortable_columns($columns)
+{
+    $columns['post_views'] = __('View count');
+
+    return $columns;
+}
+
+add_filter('manage_edit-post_sortable_columns', 'register_sortable_columns');
+
+
+/**
+ * Populate the views column with view count
+ * @param $columnName
+ * @param $id
+ */
+function post_custom_column_views($columnName, $id)
+{
+    if ($columnName === 'post_views') {
+        echo get_postviews(get_the_ID());
+    }
+}
+
+add_action('manage_posts_custom_column', 'post_custom_column_views', 10, 2);
+

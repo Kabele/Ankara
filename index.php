@@ -44,7 +44,9 @@
 
             </div>
             <div class="center">
-             <?php ankara_numeric_posts_nav(); ?></div>
+             <?php if(function_exists(ankara_numeric_posts_nav())) {
+                ankara_numeric_posts_nav();
+             } ?></div>
             <?php endif; ?>
         </div>
         <!--./container end-->

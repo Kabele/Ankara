@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <?php while (have_posts()) : the_post(); ?>
-
+    <?php
+    // update the post views meta data
+    ankara_postviews(get_the_ID());
+    ?>
     <div class="indigo white-text banner"
          style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
 

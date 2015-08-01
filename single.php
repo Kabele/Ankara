@@ -46,8 +46,7 @@
                     <?php if (has_post_thumbnail()) { ?>
                         <div class="card-image waves-effect waves-block waves-light">
                             <a href="#content">
-                                <!--<?php //the_post_thumbnail('featured-image', ['class' => 'responsive-img']); ?>-->
-                                <?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
+                                <?php the_post_thumbnail('post-thumbnail', ['class' => 'responsive-img']); ?>
                             </a>
                         </div>
                     <?php } ?>

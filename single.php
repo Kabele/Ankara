@@ -46,19 +46,20 @@
                     <?php if (has_post_thumbnail()) { ?>
                         <div class="card-image waves-effect waves-block waves-light">
                             <a href="#content">
-                                <?php the_post_thumbnail('featured-image', ['class' => 'responsive-img']); ?>
+                                <!--<?php //the_post_thumbnail('featured-image', ['class' => 'responsive-img']); ?>-->
+                                <?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
                             </a>
                         </div>
                     <?php } ?>
-                    <div class="card-content entry-content" id="content"  itemprop="articleBody">
+                    <div class="card-content entry-content" id="content" itemprop="articleBody">
                         <?php the_content(); ?>
                     </div>
-<!--                    <div class="card-action right">-->
-<!--                        <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>-->
-<!--                        <a href="" class="btn-floating light-blue"><i class="mdi mdi-twitter"></i></a>-->
-<!--                        <a href="" class="btn-floating materialize-red darken-1"><i class="mdi mdi-google-plus"></i></a>-->
-<!--                        <a href="" class="btn-floating pink"><i class="mdi-communication-comment"></i></a>-->
-<!--                    </div>-->
+                    <!--                    <div class="card-action right">-->
+                    <!--                        <a href="" class="btn-floating blue darken-3"><i class="mdi mdi-facebook"></i></a>-->
+                    <!--                        <a href="" class="btn-floating light-blue"><i class="mdi mdi-twitter"></i></a>-->
+                    <!--                        <a href="" class="btn-floating materialize-red darken-1"><i class="mdi mdi-google-plus"></i></a>-->
+                    <!--                        <a href="" class="btn-floating pink"><i class="mdi-communication-comment"></i></a>-->
+                    <!--                    </div>-->
                 </article>
 
                 <?php comments_template(); ?>

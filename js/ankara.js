@@ -1,11 +1,3 @@
-/*Init collapse button for mobile devices*/
-
-
-
-/*
- * Masonry container for blog page
- */
-
 
 
 $(document).ready(function () {

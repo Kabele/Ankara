@@ -17,7 +17,7 @@ function ankara_scripts()
     wp_enqueue_script('nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array(), false,
         true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {
-        wp_enqueue_script('comment-reply');
+        wp_enqueue_script('comment-reply', false, [], false,true);
     }
 }
 

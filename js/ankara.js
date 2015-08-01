@@ -4,7 +4,6 @@ $(document).ready(function () {
 
     /*Load Parallax*/
 
-    Materialize.fadeInImage('body');
     Materialize.fadeInImage('#parallax-img');
     $('.parallax').parallax();
 

@@ -9,11 +9,11 @@ function ankara_scripts()
 {
 //    Loading local jquery to avoid no-conflict $ issue when working with Materialize css
     wp_enqueue_script('jquery-custom', get_stylesheet_directory_uri() . '/js/jquery.min.js', [], false, true);
-    wp_enqueue_script('jquery-smooth-scroll', get_stylesheet_directory_uri() . '/js/jquery.smooth-scroll.js', array(),
+    wp_enqueue_script('jquery-smooth-scroll', get_stylesheet_directory_uri() . '/js/jquery.smooth-scroll.min.js', array(),
         false, true);
     wp_enqueue_script('materialize', get_template_directory_uri() . '/js/materialize.min.js', array(), false, true);
     wp_enqueue_script('masonry', get_template_directory_uri() . '/js/masonry.min.js', array(), false, true);
-    wp_enqueue_script('ankara', get_template_directory_uri() . '/js/ankara.js', array(), false, true);
+    wp_enqueue_script('ankara', get_template_directory_uri() . '/js/ankara.min.js', array(), false, true);
     wp_enqueue_script('nicescroll', get_template_directory_uri() . '/js/jquery.nicescroll.min.js', array(), false,
         true);
     if (is_singular() && comments_open() && get_option('thread_comments')) {

@@ -1,21 +1,23 @@
 <?php get_header(); ?>
 <?php while (have_posts()) : the_post(); ?>
     <?php
-    // update the post views meta data
-    ankara_postviews(get_the_ID());
+    if (!is_admin()) {
+        // update the post views meta data
+        ankara_postviews(get_the_ID());
+    }
     ?>
     <div class="indigo white-text banner"
          style="background-image: url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
 
         <div class="section no-pad-bot">
-            <div class="container">
-                <h3 class="header"><?php the_title(); ?></h3>
+            <div class="container" itemscope itemtype="http://schema.org/Article">
+                <h3 class="header"><span itemprop="name"><?php the_title(); ?></span></h3>
 
                 <div class="meta-data-container">
                     <ul class="blog-post-meta">
                         <li>
-                            By <a href="#">
-                                <?php echo the_author_meta('display_name'); ?>
+                            By <a href="<?php echo the_author_meta('user_url'); ?>" rel="author">
+                                <span itemprop="author"><?php echo the_author_meta('display_name'); ?></span>
                             </a>
                         </li>
                         <li><a href="<?php the_permalink(); ?>#comments" title="Comments"><i
@@ -48,7 +50,7 @@
                             </a>
                         </div>
                     <?php } ?>
-                    <div class="card-content entry-content" id="content">
+                    <div class="card-content entry-content" id="content"  itemprop="articleBody">
                         <?php the_content(); ?>
                     </div>
                     <div class="card-action right">
